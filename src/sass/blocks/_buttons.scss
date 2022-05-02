@@ -1,0 +1,9 @@
+.btn {
+    background-color: $main-color;
+    height: 45px;
+    padding: 12px 25px;
+    transition: all .5s ease;
+    &:hover {
+        background-color: lighten($color: $main-color, $amount: 10%);
+    }
+}

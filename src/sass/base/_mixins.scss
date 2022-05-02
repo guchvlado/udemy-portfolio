@@ -1,0 +1,35 @@
+@mixin before-circle {
+    position: relative;
+    z-index: 2;
+    &:before {
+        content: "";
+        position: absolute;
+        top: -25%;
+        left: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 100%;
+        z-index: -1;
+        background-color: $main-color;
+    }
+}
+
+@mixin link-hover {
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: $main-color;
+        transform: scale(0);
+        transition: transform .5s ease;
+    }
+    &:hover {
+        &:before {
+            transform: scale(1);
+        }
+    }
+}

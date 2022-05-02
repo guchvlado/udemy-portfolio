@@ -17,4 +17,20 @@ function menu() {
     });
 }
 
+function skills() {
+    const elementsWidth = document.querySelectorAll('.skills__ratings-counter'),
+          elementsLine = document.querySelectorAll('.skills__ratings-line span');
+
+    for (let i = 0; i < elementsWidth.length; i++) {
+        const width = parseInt(elementsWidth[i].textContent);
+        if (width > 100) {
+            elementsLine[i].style.width = '100%';
+        }
+        else {
+            elementsLine[i].style.width = width + "%";
+        }
+    }
+}
+
 menu();
+skills();

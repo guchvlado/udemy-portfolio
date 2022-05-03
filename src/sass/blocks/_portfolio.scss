@@ -1,0 +1,47 @@
+.portfolio {
+    margin-top: 120px;
+    .divider {
+        margin: 25px auto 0 auto;
+    }
+    &__content {
+        margin-top: 60px;
+        display: grid;
+        grid-template: repeat(2, 280px) / repeat(4, 280px);
+        grid-auto-rows: 280px;
+        gap: 5px;
+        perspective: 500px;
+    }
+    .vertical {
+        grid-area: 1 / 4 / 3 / 5;
+    }
+    .horizontal {
+        grid-area: 2 / 2 / 3 / 4;
+    }
+    &__item {
+        position: relative;
+        img {
+            transition: all .5s ease-out;
+        }
+        &:hover {
+            .portfolio__title {
+                visibility: visible;
+                opacity: 1;
+            }
+            img {
+                transform: rotateY(180deg);
+                filter: grayscale(100%)
+            }
+        }
+    }
+    &__title {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $main-color;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .5s ease-out;
+        text-transform: uppercase;
+    }
+}
